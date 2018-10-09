@@ -1,4 +1,6 @@
 //V 2.1.1 15.08.18 18:50
+//Nosov Vyacheslav
+//nwtp-spb@bk.ru
 //*********************************
 import controlP5.*;
 ControlP5 cp5;
