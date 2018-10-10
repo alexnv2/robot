@@ -1,4 +1,4 @@
-//V 2.1.2 10.10.2018 
+//V 2.1.3 10.10.2018 
 //Nosov Vyacheslav
 //Processing programm
 //*********************************
@@ -25,7 +25,7 @@ float fltData; //Численные значения прнятые от роб�
 String strKod;//Код принятых данных
 int flagControl=0;//режим работы локатора 1
 //радар
-int degr;//угол
+int intDegr;//угол
 int val;//дистанция о препятсвии сонара
 //int newLine = 13;
 Ultrasonic sonic;
@@ -38,7 +38,7 @@ PFont myFont;
 boolean pressOff=true;   //Кнопка мыша отжата
 boolean camOff=false; //камера выключена
 
-boolean demo=true;// тестовый режим false
+boolean demo=false;// тестовый режим false
 
 int Patm; // Давление
 int Tatm; // Тепература
@@ -264,7 +264,7 @@ void draw() {
   // fill(0);
   // Вывод на экран показаний
   if (logSonic==true) {
-    sonic.radar(degr, val);
+    sonic.radar(intDegr, val);
     rectMode(LEFT);//необходим для сброса уставки в классе ultrasonic
   } else {
     fill(0, 100, 0);
@@ -531,7 +531,7 @@ void decoder() {
         heading=int(fltData);
         break;
       case "U": 
-        degr=180-int(fltData);
+        intDegr=180-int(fltData);
         //      println(fltData);
         break;
       case "D":  
